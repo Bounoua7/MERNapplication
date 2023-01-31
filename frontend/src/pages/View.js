@@ -12,10 +12,12 @@ const View = () => {
     if(id) {
         getSingleUser(id);
     }
-  }, [id])
+  }, [id]);
+
+  console.log("user",id);
 
   const getSingleUser =async (id) => {
-    const response = await axios.delete(`http://localhost:5002/user/${id}`);
+    const response = await axios.get(`http://localhost:5002/user/${id}`);
      if(response.status ===200)
      {
        setUser({...response.data[0] });
@@ -23,16 +25,16 @@ const View = () => {
   };
 
   return (
-    <div style={{marginTop: "150px"}}> 
+    <div style={{marginTop: "100px"}}> 
       <div className='card'>
         <div className='card-header'>
-        <p> User Contact Detail</p> 
+        <p> User Contact Details</p> 
         </div>
         <div className='container'>
           <strong> Id: </strong>
           <span>{id}</span>
           <br/>
-          <br/>
+          <br/> 
 
           <strong> Name: </strong>
           <span>{user && user.name}</span>
@@ -46,6 +48,7 @@ const View = () => {
 
           <strong> Contact: </strong>
           <span>{user && user.contact}</span>
+          <br/>
           <br/>
           <br/>
           <Link to="/">

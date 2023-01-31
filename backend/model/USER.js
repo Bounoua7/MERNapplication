@@ -1,5 +1,5 @@
 const mongoose = require("mongoose");
-
+mongoose.set('strictQuery',false);
 // Se connecter à la base de données
 const mongoDB = "mongodb://127.0.0.1:27017/euromed";   
 mongoose.connect(mongoDB)

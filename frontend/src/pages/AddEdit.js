@@ -2,6 +2,8 @@ import React, {useState, useEffect} from 'react';
 import {useHistory, useParams} from "react-router-dom";
 import axios from 'axios';
 import './AddEdit.css';
+import { toast } from 'react-toastify';
+
 import { Toast } from 'react-bootstrap';
 
 
@@ -11,16 +13,19 @@ const initialState= {
   contact: "",
 
 };
+
 const AddEdit = () => {
-  const [state, setState] = useState(initialState);
 
-  const {name, email, contact} = initialState;
+
+   const [state, setState] = useState(initialState);
+
+   const {name, email, contact} =state;
   
-  const history = useHistory();
+   const history = useHistory();
 
-  const {id} = useParams();
+   const {id} = useParams();
 
-  useEffect(() => {
+   useEffect(() => {
     if(id) {
         getSingleUser(id);
     }
@@ -36,7 +41,7 @@ const AddEdit = () => {
 
   const handleInputChange = (e) => {
     let {name, value}= e.target;
-    setState({...state,[name]: value});
+    setState({...state,[name]: value,});
   };
 
   const addUser = async (data) => {
@@ -54,7 +59,7 @@ const AddEdit = () => {
   const handleSubmit = (e) => {
     e.preventDefault();
     if(!name || !email || !contact){
-       Toast.error("please provide value into each input field")
+       toast.error("please provide value into each input field")
     } else {
       if(!id) {
         addUser(state);
@@ -64,8 +69,6 @@ const AddEdit = () => {
       setTimeout(() => history.push("/"), 500);
 
     }
-   
-
   };
 
  

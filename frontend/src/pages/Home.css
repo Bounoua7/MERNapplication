@@ -1,50 +1,45 @@
 .styled-table {
+    width: 100%;
     border-collapse: collapse;
-    margin: auto;
-    font-size: 0.9cm;
-    font-family: sans-serif;
-    max-width: 800px;
-    box-shadow: 0 e 20px rgba(152, 177, 184, 0.15);
-    }
-    .styled-table thead tr{
-    background-color: #9aa345;
-    color: #ffffff;
-    text-align: left;
-    }
-    .styled-table th,
-    .styled-table td {
-    padding: 12px 15px;
-    }
-    .styled-table tbody tr{
-    border-bottom: 1px solid #dddddd;
-    }
-    .styled-table tbody tr:nth-of-type(even) { 
-        background-color: #f3f3f3;
-    }
+  }
+  
+  .styled-table th {
+    text-align: center;
+    background-color:#6c5108;
+    border: 1px solid #ddd;
+    padding: 8px;
+  }
+  
+  .styled-table td {
+    border: 1px solid #ddd;
+    padding: 8px;
+    text-align: center;
+  }
+  .btn {
+    border: none;
+    padding: 8px 16px;
+    text-align: center;
+    text-decoration: none;
+    display: inline-block;
+    margin: 4px 2px;
+    cursor: pointer;
     
-    .styled-table tbody tr:last-of-type { 
-        border-bottom: 2px solid #b9bb59;
-    } 
-    .btn { 
-        border: none; 
-        color: white; 
-        padding: 5px 8px; 
-        text-align: center; 
-        text-decoration: none; 
-        display: inline-block; 
-        border-radius: 5px; 
-        font-size: 16px; 
-        margin: 4px 2px;  
-        cursor: pointer; 
-    } 
+  }
+ 
+  
+  .btn-edit {
+   
+    color: white;
     
-    .btn-edit {
-         background-color: #27cfb9 
-        } 
-    .btn-delete { 
-    background-color: #e60d9d; } 
-        
-    .btn-view {
-        background-color: #52af5a;
-        color: white;
-    }
+  }
+  
+  .btn-view {
+  
+    color: white;
+  }
+  
+  .btn-delete {
+
+    color: white;
+  }
+  
